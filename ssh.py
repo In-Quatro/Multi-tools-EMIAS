@@ -54,7 +54,8 @@ class Ui_Window(object):
         self.btn_copy.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_copy.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("icons\icon_copy.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("icons\icon_copy.png"),
+                       QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_copy.setIcon(icon)
         self.btn_copy.setObjectName("btn_copy")
         self.btn_copy.clicked.connect(self.send_to_clipboard)
@@ -65,10 +66,12 @@ class Ui_Window(object):
         self.line_print_2.setObjectName("line_print_2")
         self.btn_clear_ip = QtWidgets.QPushButton(self.tab)
         self.btn_clear_ip.setGeometry(QtCore.QRect(163, 54, 24, 24))
-        self.btn_clear_ip.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_clear_ip.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_clear_ip.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("icons\icon_delete.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("icons\icon_delete.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_clear_ip.setIcon(icon1)
         self.btn_clear_ip.setObjectName("btn_clear_ip")
         self.lbl_print = QtWidgets.QLabel(self.tab)
@@ -89,30 +92,36 @@ class Ui_Window(object):
         self.horizontalLayout_print.setContentsMargins(3, 0, 3, 0)
         self.horizontalLayout_print.setObjectName("horizontalLayout_print")
         self.btn_clear_spooler = QtWidgets.QPushButton(self.layoutWidget)
-        self.btn_clear_spooler.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_clear_spooler.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_clear_spooler.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("icons\icon_clear.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("icons\icon_clear.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_clear_spooler.setIcon(icon2)
         self.btn_clear_spooler.setIconSize(QtCore.QSize(32, 32))
         self.btn_clear_spooler.setObjectName("btn_clear_spooler")
         self.horizontalLayout_print.addWidget(self.btn_clear_spooler)
         self.btn_test_page = QtWidgets.QPushButton(self.layoutWidget)
-        self.btn_test_page.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_test_page.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_test_page.setText("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("icons\icon_test_page.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("icons\icon_test_page.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_test_page.setIcon(icon3)
         self.btn_test_page.setIconSize(QtCore.QSize(32, 32))
         self.btn_test_page.setObjectName("btn_test_page")
         self.horizontalLayout_print.addWidget(self.btn_test_page)
         self.btn_del_printer = QtWidgets.QPushButton(self.layoutWidget)
-        self.btn_del_printer.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_del_printer.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_del_printer.setAccessibleName("")
         self.btn_del_printer.setAccessibleDescription("")
         self.btn_del_printer.setText("")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("icons\icon_delete_printer.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("icons\icon_delete_printer.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_del_printer.setIcon(icon4)
         self.btn_del_printer.setIconSize(QtCore.QSize(32, 32))
         self.btn_del_printer.setObjectName("btn_del_printer")
@@ -123,7 +132,8 @@ class Ui_Window(object):
         self.btn_reboot.setAccessibleDescription("")
         self.btn_reboot.setText("")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("icons\icon_reboot.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon5.addPixmap(QtGui.QPixmap("icons\icon_reboot.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_reboot.setIcon(icon5)
         self.btn_reboot.setIconSize(QtCore.QSize(32, 32))
         self.btn_reboot.setObjectName("btn_reboot")
@@ -136,7 +146,8 @@ class Ui_Window(object):
         self.btn_cups.setAccessibleDescription("")
         self.btn_cups.setText("")
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("icons\icon_cups.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon6.addPixmap(QtGui.QPixmap("icons\icon_cups.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_cups.setIcon(icon6)
         self.btn_cups.setIconSize(QtCore.QSize(32, 32))
         self.btn_cups.setObjectName("btn_cups")
@@ -149,7 +160,8 @@ class Ui_Window(object):
         self.btn_default.setAccessibleDescription("")
         self.btn_default.setText("")
         icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("icons\icon_default.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon7.addPixmap(QtGui.QPixmap("icons\icon_default.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_default.setIcon(icon7)
         self.btn_default.setIconSize(QtCore.QSize(32, 32))
         self.btn_default.setObjectName("btn_default")
@@ -162,18 +174,21 @@ class Ui_Window(object):
         self.btn_rename.setAccessibleDescription("")
         self.btn_rename.setText("")
         icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap("icons\icon_rename.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon8.addPixmap(QtGui.QPixmap("icons\icon_rename.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_rename.setIcon(icon8)
         self.btn_rename.setIconSize(QtCore.QSize(32, 32))
         self.btn_rename.setObjectName("btn_rename")
         self.horizontalLayout_print.addWidget(self.btn_rename)
         self.btn_password = QtWidgets.QPushButton(self.layoutWidget)
-        self.btn_password.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_password.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_password.setAccessibleName("")
         self.btn_password.setAccessibleDescription("")
         self.btn_password.setText("")
         icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap("icons\icon_password.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon9.addPixmap(QtGui.QPixmap("icons\icon_password.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_password.setIcon(icon9)
         self.btn_password.setIconSize(QtCore.QSize(32, 32))
         self.btn_password.setObjectName("btn_password")
@@ -197,7 +212,8 @@ class Ui_Window(object):
         self.line_scan_hp.setObjectName("line_scan_hp")
         self.btn_copy_hostname = QtWidgets.QPushButton(self.tab_2)
         self.btn_copy_hostname.setGeometry(QtCore.QRect(297, 110, 24, 24))
-        self.btn_copy_hostname.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_copy_hostname.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_copy_hostname.setText("")
         self.btn_copy_hostname.setIcon(icon)
         self.btn_copy_hostname.setObjectName("btn_copy_hostname")
@@ -209,19 +225,22 @@ class Ui_Window(object):
         self.btn_copy_ip.setObjectName("btn_copy_ip")
         self.btn_clear_all = QtWidgets.QPushButton(self.tab_2)
         self.btn_clear_all.setGeometry(QtCore.QRect(268, 67, 24, 24))
-        self.btn_clear_all.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_clear_all.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_clear_all.setText("")
         self.btn_clear_all.setIcon(icon1)
         self.btn_clear_all.setObjectName("btn_clear_all")
         self.btn_clear_hostname = QtWidgets.QPushButton(self.tab_2)
         self.btn_clear_hostname.setGeometry(QtCore.QRect(268, 110, 24, 24))
-        self.btn_clear_hostname.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_clear_hostname.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_clear_hostname.setText("")
         self.btn_clear_hostname.setIcon(icon1)
         self.btn_clear_hostname.setObjectName("btn_clear_hostname")
         self.btn_clear_ip_scan_hp = QtWidgets.QPushButton(self.tab_2)
         self.btn_clear_ip_scan_hp.setGeometry(QtCore.QRect(268, 150, 24, 24))
-        self.btn_clear_ip_scan_hp.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_clear_ip_scan_hp.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_clear_ip_scan_hp.setText("")
         self.btn_clear_ip_scan_hp.setIcon(icon1)
         self.btn_clear_ip_scan_hp.setObjectName("btn_clear_ip_scan_hp")
@@ -258,42 +277,61 @@ class Ui_Window(object):
     def retranslateUi(self, Window):
         _translate = QtCore.QCoreApplication.translate
         Window.setWindowTitle(_translate("Window", "Multi Tools EMIAS"))
-        self.combo_model.setItemText(1, _translate("Window", "HP LaserJet M501"))
-        self.combo_model.setItemText(2, _translate("Window", "HP LaserJet M426"))
-        self.combo_model.setItemText(3, _translate("Window", "HP LaserJet M401"))
-        self.combo_model.setItemText(4, _translate("Window", "HP LaserJet M425"))
+        self.combo_model.setItemText(1,
+                                     _translate("Window", "HP LaserJet M501"))
+        self.combo_model.setItemText(2,
+                                     _translate("Window", "HP LaserJet M426"))
+        self.combo_model.setItemText(3,
+                                     _translate("Window", "HP LaserJet M401"))
+        self.combo_model.setItemText(4,
+                                     _translate("Window", "HP LaserJet M425"))
         self.lbl_ip.setText(_translate("Window", "IP адрес:"))
         self.lbl_model.setText(_translate("Window", "Модель:"))
         self.btn_copy.setToolTip(_translate("Window", "Копировать в буфер"))
         self.btn_clear_ip.setToolTip(_translate("Window", "Очистить поле"))
         self.lbl_print.setText(_translate("Window",
                                           "<html><head/><body><p><span style=\" font-weight:600;\">Печать</span></p></body></html>"))
-        self.btn_clear_spooler.setToolTip(_translate("Window", "Очистить очередь печати"))
-        self.btn_test_page.setToolTip(_translate("Window", "Тестовая страница"))
-        self.btn_del_printer.setToolTip(_translate("Window", "Удалить принтер"))
-        self.btn_reboot.setToolTip(_translate("Window", "Перезагрузка принтера"))
-        self.btn_cups.setToolTip(_translate("Window", "Перезагрузить службы CUPS"))
-        self.btn_default.setToolTip(_translate("Window", "Сделать принтер по умолчнию"))
-        self.btn_rename.setToolTip(_translate("Window", "Периеименовать hostname АРМ"))
+        self.btn_clear_spooler.setToolTip(
+            _translate("Window", "Очистить очередь печати"))
+        self.btn_test_page.setToolTip(
+            _translate("Window", "Тестовая страница"))
+        self.btn_del_printer.setToolTip(
+            _translate("Window", "Удалить принтер"))
+        self.btn_reboot.setToolTip(
+            _translate("Window", "Перезагрузка принтера"))
+        self.btn_cups.setToolTip(
+            _translate("Window", "Перезагрузить службы CUPS"))
+        self.btn_default.setToolTip(
+            _translate("Window", "Сделать принтер по умолчнию"))
+        self.btn_rename.setToolTip(
+            _translate("Window", "Периеименовать hostname АРМ"))
         self.btn_password.setToolTip(_translate("Window", "Пароль (o123456O)"))
-        self.Main.setTabText(self.Main.indexOf(self.tab), _translate("Window", "Печать"))
+        self.Main.setTabText(self.Main.indexOf(self.tab),
+                             _translate("Window", "Печать"))
         self.label_scan_hp.setText(_translate("Window",
                                               "<html><head/><body><p><span style=\" font-weight:600;\">Сканирование</span></p></body></html>"))
-        self.btn_copy_hostname.setToolTip(_translate("Window", "Копировать в буфер"))
+        self.btn_copy_hostname.setToolTip(
+            _translate("Window", "Копировать в буфер"))
         self.btn_copy_ip.setToolTip(_translate("Window", "Копировать в буфер"))
         self.btn_clear_all.setToolTip(_translate("Window", "Очистить поле"))
-        self.btn_clear_hostname.setToolTip(_translate("Window", "Очистить поле"))
-        self.btn_clear_ip_scan_hp.setToolTip(_translate("Window", "Очистить поле"))
+        self.btn_clear_hostname.setToolTip(
+            _translate("Window", "Очистить поле"))
+        self.btn_clear_ip_scan_hp.setToolTip(
+            _translate("Window", "Очистить поле"))
         self.lbl_hostname.setText(_translate("Window", "Имя (hostname) АРМ:"))
         self.lbl_ip_arm.setText(_translate("Window", "IP адрес АРМ:"))
         self.lbl_login.setText(_translate("Window", "Имя пользователя:"))
-        self.Main.setTabText(self.Main.indexOf(self.tab_2), _translate("Window", "Сканирование (HP)"))
-        self.Main.setTabText(self.Main.indexOf(self.tab_3), _translate("Window", "Сканирование (Pantum)"))
+        self.Main.setTabText(self.Main.indexOf(self.tab_2),
+                             _translate("Window", "Сканирование (HP)"))
+        self.Main.setTabText(self.Main.indexOf(self.tab_3),
+                             _translate("Window", "Сканирование (Pantum)"))
         self.actionExit.setText(_translate("Window", "Exit"))
 
     def send_to_clipboard(self):
-        m = self.combo_model.currentText()
-        QApplication.clipboard().setText(m)
+        model = self.combo_model.currentText()
+        ip = self.lineEdit_ip.text()
+        command = f'''/usr/sbin/lpadmin -p '{model}' -v 'socket://{ip}:9100' -P '/opt/Printer_Drivers/Ochered/4-ya ochered/HP-LaserJet-400-MFP-M425.ppd';/usr/sbin/cupsenable "{model}";/usr/sbin/cupsaccept {model};/usr/sbin/lpadmin -d {model};lpoptions -d {model};lpr /usr/share/cups/data/default-testpage.pdf;lpstat -t'''
+        QApplication.clipboard().setText(command)
 
 
 if __name__ == '__main__':

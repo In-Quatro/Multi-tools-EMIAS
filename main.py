@@ -1,11 +1,11 @@
-from ssh import *
+from PyQt5 import uic
+from PyQt5.QtWidgets import QApplication
 
-import sys
+Form, Window = uic.loadUiType("ssh.ui")
 
-app = QtWidgets.QApplication(sys.argv)
-MainWindow = QtWidgets.QMainWindow()
-ui = Ui_Window()
-ui.setupUi(MainWindow)
-MainWindow.show()
-sys.exit(app.exec_())
-
+app = QApplication([])
+window = Window()
+form = Form()
+form.setupUi(window)
+window.show()
+app.exec_()
