@@ -369,7 +369,10 @@ class Ui_Window(object):
             "MFP_HP": "/opt/Printer_Drivers/Ochered/4-ya ochered/HP-LaserJet-400-MFP-M425.ppd",
             "PRINTER_HP": "/opt/Printer_Drivers/Ochered/4-ya ochered/HP-LaserJet-400-M401.ppd",
         }
-        cnt = "-2"
+        cnt = ''
+        if self.lineEdit_cnt.text() != '':
+            cnt = '-' + self.lineEdit_cnt.text()
+
         models = self.combo_model.currentText()
         model = ""
         if models in ("HP-LaserJet-M426", "HP-LaserJet-M425"):
