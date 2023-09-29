@@ -357,7 +357,6 @@ class Ui_Window(object):
         cnt = ''
         if self.lineEdit_cnt.text() != '':
             cnt = '-' + self.lineEdit_cnt.text()
-
         models = self.combo_model.currentText().replace(' ', '-').replace('Pantum-', '')
         model = models
         models += cnt
