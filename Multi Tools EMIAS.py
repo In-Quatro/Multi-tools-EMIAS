@@ -188,19 +188,6 @@ class Ui_Window(object):
         self.btn_rename.setObjectName("btn_rename")
         self.btn_rename.clicked.connect(self.send_to_clipboard_rename)
 
-        # Кнопка "Пароль"
-        self.btn_password = QtWidgets.QPushButton(self.splitter)
-        self.btn_password.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btn_password.setAccessibleName("")
-        self.btn_password.setAccessibleDescription("")
-        self.btn_password.setText("")
-        icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap("icons/icon_password.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btn_password.setIcon(icon9)
-        self.btn_password.setIconSize(QtCore.QSize(25, 25))
-        self.btn_password.setObjectName("btn_password")
-        self.btn_password.clicked.connect(self.send_to_clipboard_password)
-
         # Кнопка "FTP"
         self.btn_ftp = QtWidgets.QPushButton(self.splitter)
         self.btn_ftp.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -213,6 +200,21 @@ class Ui_Window(object):
         self.btn_ftp.setIconSize(QtCore.QSize(28, 28))
         self.btn_ftp.setObjectName("btn_ftp")
         self.btn_ftp.clicked.connect(self.send_to_clipboard_ftp)
+
+        # Кнопка "Пароль"
+        self.btn_password = QtWidgets.QPushButton(self.splitter)
+        self.btn_password.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_password.setAccessibleName("")
+        self.btn_password.setAccessibleDescription("")
+        self.btn_password.setText("")
+        icon9 = QtGui.QIcon()
+        icon9.addPixmap(QtGui.QPixmap("icons/icon_password.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btn_password.setIcon(icon9)
+        self.btn_password.setIconSize(QtCore.QSize(25, 25))
+        self.btn_password.setObjectName("btn_password")
+        self.btn_password.clicked.connect(self.send_to_clipboard_password)
 
         # Вкладка "Сканирование (HP)"
         self.Main.addTab(self.tab, "")
@@ -419,13 +421,13 @@ class Ui_Window(object):
     def send_to_clipboard_hostname(self):
         login = self.lineEdit_login.text().replace(" ", "")
         hostname = self.lineEdit_hostname.text().replace(" ", "")
-        command = f"\\{hostname}.mosgorzdrav.local\scan\{login}"
+        command = f"\\\{hostname}.mosgorzdrav.local\scan\{login}"
         QApplication.clipboard().setText(command)
 
     def send_to_clipboard_ip_arm(self):
         login = self.lineEdit_login.text()
         ip = self.lineEdit_ip_arm.text()
-        command = f"\\{ip}\scan\{login}".replace(" ", "")
+        command = f"\\\{ip}\scan\{login}".replace(" ", "")
         QApplication.clipboard().setText(command)
 
     def clear_hostname_hp(self):
