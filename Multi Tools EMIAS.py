@@ -1,19 +1,19 @@
-from PyQt5 import QtQuickWidgets
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore, QtGui, QtWidgets, QtQuickWidgets
 from PyQt5.QtWidgets import QApplication
 
 
 class Ui_Window(object):
     def setupUi(self, Window):
         Window.setObjectName("Window")
-        Window.resize(428, 208)
-        Window.setMinimumSize(QtCore.QSize(428, 208))
-        Window.setMaximumSize(QtCore.QSize(428, 208))
+        Window.setEnabled(True)
+        Window.resize(426, 210)
+        Window.setMinimumSize(QtCore.QSize(426, 210))
+        Window.setMaximumSize(QtCore.QSize(426, 210))
         Window.setToolTip("")
         self.centralwidget = QtWidgets.QWidget(Window)
         self.centralwidget.setObjectName("centralwidget")
         self.Main = QtWidgets.QTabWidget(self.centralwidget)
-        self.Main.setGeometry(QtCore.QRect(0, 0, 597, 211))
+        self.Main.setGeometry(QtCore.QRect(0, 0, 428, 211))
         self.Main.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.Main.setStyleSheet("")
         self.Main.setTabPosition(QtWidgets.QTabWidget.North)
@@ -28,6 +28,7 @@ class Ui_Window(object):
         self.combo_model.setObjectName("combo_model")
         self.combo_model.addItem("")
         self.combo_model.setItemText(0, "")
+        self.combo_model.addItem("")
         self.combo_model.addItem("")
         self.combo_model.addItem("")
         self.combo_model.addItem("")
@@ -55,7 +56,6 @@ class Ui_Window(object):
         self.btn_copy.setIcon(icon)
         self.btn_copy.setObjectName("btn_copy")
         self.btn_copy.clicked.connect(self.send_to_clipboard_printer)
-
 
         self.line_print_2 = QtWidgets.QFrame(self.tab)
         self.line_print_2.setGeometry(QtCore.QRect(10, 80, 403, 21))
@@ -89,25 +89,23 @@ class Ui_Window(object):
         self.lineEdit_cnt = QtWidgets.QLineEdit(self.tab)
         self.lineEdit_cnt.setGeometry(QtCore.QRect(364, 55, 22, 22))
         self.lineEdit_cnt.setObjectName("lineEdit_cnt")
-        self.splitter = QtWidgets.QSplitter(self.tab)
-        self.splitter.setGeometry(QtCore.QRect(24, 100, 378, 40))
-        self.splitter.setOrientation(QtCore.Qt.Horizontal)
-        self.splitter.setObjectName("splitter")
 
         # Кнопка "Очистить очередь печати"
-        self.btn_claer_spooler = QtWidgets.QPushButton(self.splitter)
+        self.btn_claer_spooler = QtWidgets.QPushButton(self.tab)
+        self.btn_claer_spooler.setGeometry(QtCore.QRect(24, 100, 38, 40))
         self.btn_claer_spooler.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_claer_spooler.setText("")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap("icons/icon_clear.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_claer_spooler.setIcon(icon2)
-        self.btn_claer_spooler.setIconSize(QtCore.QSize(32, 32))
+        self.btn_claer_spooler.setIconSize(QtCore.QSize(35, 35))
         self.btn_claer_spooler.setObjectName("btn_claer_spooler")
         self.btn_claer_spooler.clicked.connect(self.send_to_clipboard_clear_spooler)
 
         # Кнопка "Печать тестовой страницы"
-        self.btn_test_page = QtWidgets.QPushButton(self.splitter)
+        self.btn_test_page = QtWidgets.QPushButton(self.tab)
         self.btn_test_page.setEnabled(True)
+        self.btn_test_page.setGeometry(QtCore.QRect(67, 100, 37, 40))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -123,7 +121,8 @@ class Ui_Window(object):
         self.btn_test_page.clicked.connect(self.send_to_clipboard_test_page)
 
         # Кнопка "Удаления принтера"
-        self.btn_del_printer = QtWidgets.QPushButton(self.splitter)
+        self.btn_del_printer = QtWidgets.QPushButton(self.tab)
+        self.btn_del_printer.setGeometry(QtCore.QRect(109, 100, 38, 40))
         self.btn_del_printer.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_del_printer.setAccessibleName("")
         self.btn_del_printer.setAccessibleDescription("")
@@ -133,11 +132,11 @@ class Ui_Window(object):
         self.btn_del_printer.setIcon(icon4)
         self.btn_del_printer.setIconSize(QtCore.QSize(32, 32))
         self.btn_del_printer.setObjectName("btn_del_printer")
-        self.btn_del_printer.clicked.connect(
-            self.send_to_clipboard_del_printer)
+        self.btn_del_printer.clicked.connect(self.send_to_clipboard_del_printer)
 
         # Кнопка "Перезагрузка АРМ"
-        self.btn_reboot = QtWidgets.QPushButton(self.splitter)
+        self.btn_reboot = QtWidgets.QPushButton(self.tab)
+        self.btn_reboot.setGeometry(QtCore.QRect(152, 100, 38, 40))
         self.btn_reboot.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_reboot.setAccessibleName("")
         self.btn_reboot.setAccessibleDescription("")
@@ -150,7 +149,8 @@ class Ui_Window(object):
         self.btn_reboot.clicked.connect(self.send_to_clipboard_reboot)
 
         # Кнопка "Перезагрузки CUPS"
-        self.btn_cups = QtWidgets.QPushButton(self.splitter)
+        self.btn_cups = QtWidgets.QPushButton(self.tab)
+        self.btn_cups.setGeometry(QtCore.QRect(195, 100, 38, 40))
         self.btn_cups.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_cups.setAccessibleName("")
         self.btn_cups.setAccessibleDescription("")
@@ -163,7 +163,8 @@ class Ui_Window(object):
         self.btn_cups.clicked.connect(self.send_to_clipboard_cups)
 
         # Кнопка "Сделать принтер по умолчанию"
-        self.btn_default = QtWidgets.QPushButton(self.splitter)
+        self.btn_default = QtWidgets.QPushButton(self.tab)
+        self.btn_default.setGeometry(QtCore.QRect(238, 100, 38, 40))
         self.btn_default.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_default.setAccessibleName("")
         self.btn_default.setAccessibleDescription("")
@@ -176,7 +177,8 @@ class Ui_Window(object):
         self.btn_default.clicked.connect(self.send_to_clipboard_default)
 
         # Кнопка "Переименовать АРМ"
-        self.btn_rename = QtWidgets.QPushButton(self.splitter)
+        self.btn_rename = QtWidgets.QPushButton(self.tab)
+        self.btn_rename.setGeometry(QtCore.QRect(281, 100, 37, 40))
         self.btn_rename.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_rename.setAccessibleName("")
         self.btn_rename.setAccessibleDescription("")
@@ -189,7 +191,8 @@ class Ui_Window(object):
         self.btn_rename.clicked.connect(self.send_to_clipboard_rename)
 
         # Кнопка "FTP"
-        self.btn_ftp = QtWidgets.QPushButton(self.splitter)
+        self.btn_ftp = QtWidgets.QPushButton(self.tab)
+        self.btn_ftp.setGeometry(QtCore.QRect(323, 100, 37, 40))
         self.btn_ftp.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_ftp.setAccessibleName("")
         self.btn_ftp.setAccessibleDescription("")
@@ -202,15 +205,14 @@ class Ui_Window(object):
         self.btn_ftp.clicked.connect(self.send_to_clipboard_ftp)
 
         # Кнопка "Пароль"
-        self.btn_password = QtWidgets.QPushButton(self.splitter)
-        self.btn_password.setCursor(
-            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.btn_password = QtWidgets.QPushButton(self.tab)
+        self.btn_password.setGeometry(QtCore.QRect(365, 100, 37, 40))
+        self.btn_password.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_password.setAccessibleName("")
         self.btn_password.setAccessibleDescription("")
         self.btn_password.setText("")
         icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap("icons/icon_password.png"),
-                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon9.addPixmap(QtGui.QPixmap("icons/icon_password.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_password.setIcon(icon9)
         self.btn_password.setIconSize(QtCore.QSize(25, 25))
         self.btn_password.setObjectName("btn_password")
@@ -232,8 +234,9 @@ class Ui_Window(object):
         self.line_scan_hp.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_scan_hp.setObjectName("line_scan_hp")
 
+        # Кнопка "Настроить по hostname"
         self.btn_copy_hostname = QtWidgets.QPushButton(self.tab_2)
-        self.btn_copy_hostname.setGeometry(QtCore.QRect(390, 110, 24, 24))
+        self.btn_copy_hostname.setGeometry(QtCore.QRect(180, 110, 24, 24))
         self.btn_copy_hostname.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_copy_hostname.setText("")
         self.btn_copy_hostname.setIcon(icon)
@@ -242,7 +245,7 @@ class Ui_Window(object):
 
         # Кнопка "Настроить по IP"
         self.btn_copy_ip = QtWidgets.QPushButton(self.tab_2)
-        self.btn_copy_ip.setGeometry(QtCore.QRect(390, 150, 24, 24))
+        self.btn_copy_ip.setGeometry(QtCore.QRect(180, 150, 24, 24))
         self.btn_copy_ip.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_copy_ip.setText("")
         self.btn_copy_ip.setIcon(icon)
@@ -251,17 +254,16 @@ class Ui_Window(object):
 
         # Кнопка "Очистить все"
         self.btn_clear_all = QtWidgets.QPushButton(self.tab_2)
-        self.btn_clear_all.setGeometry(QtCore.QRect(360, 67, 24, 24))
+        self.btn_clear_all.setGeometry(QtCore.QRect(150, 67, 24, 24))
         self.btn_clear_all.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_clear_all.setText("")
         self.btn_clear_all.setIcon(icon1)
         self.btn_clear_all.setObjectName("btn_clear_all")
         self.btn_clear_all.clicked.connect(self.clear_all_scan)
-        self.btn_clear_all.clicked.connect(self.clear_all_scan)
 
         # Кнопка "Очистить hostname"
         self.btn_clear_hostname = QtWidgets.QPushButton(self.tab_2)
-        self.btn_clear_hostname.setGeometry(QtCore.QRect(361, 110, 24, 24))
+        self.btn_clear_hostname.setGeometry(QtCore.QRect(151, 110, 24, 24))
         self.btn_clear_hostname.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_clear_hostname.setText("")
         self.btn_clear_hostname.setIcon(icon1)
@@ -270,7 +272,7 @@ class Ui_Window(object):
 
         # Кнопка "Очистить IP"
         self.btn_clear_ip_scan_hp = QtWidgets.QPushButton(self.tab_2)
-        self.btn_clear_ip_scan_hp.setGeometry(QtCore.QRect(361, 150, 24, 24))
+        self.btn_clear_ip_scan_hp.setGeometry(QtCore.QRect(151, 150, 24, 24))
         self.btn_clear_ip_scan_hp.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_clear_ip_scan_hp.setText("")
         self.btn_clear_ip_scan_hp.setIcon(icon1)
@@ -278,10 +280,10 @@ class Ui_Window(object):
         self.btn_clear_ip_scan_hp.clicked.connect(self.clear_ip_hp)
 
         self.lineEdit_ip_arm = QtWidgets.QLineEdit(self.tab_2)
-        self.lineEdit_ip_arm.setGeometry(QtCore.QRect(11, 152, 341, 22))
+        self.lineEdit_ip_arm.setGeometry(QtCore.QRect(11, 152, 131, 22))
         self.lineEdit_ip_arm.setObjectName("lineEdit_ip_arm")
         self.lineEdit_login = QtWidgets.QLineEdit(self.tab_2)
-        self.lineEdit_login.setGeometry(QtCore.QRect(11, 67, 341, 22))
+        self.lineEdit_login.setGeometry(QtCore.QRect(11, 67, 131, 22))
         self.lineEdit_login.setObjectName("lineEdit_login")
         self.lbl_hostname = QtWidgets.QLabel(self.tab_2)
         self.lbl_hostname.setGeometry(QtCore.QRect(13, 92, 105, 16))
@@ -293,8 +295,11 @@ class Ui_Window(object):
         self.lbl_login.setGeometry(QtCore.QRect(13, 48, 97, 16))
         self.lbl_login.setObjectName("lbl_login")
         self.lineEdit_hostname = QtWidgets.QLineEdit(self.tab_2)
-        self.lineEdit_hostname.setGeometry(QtCore.QRect(11, 110, 341, 22))
+        self.lineEdit_hostname.setGeometry(QtCore.QRect(11, 110, 131, 22))
         self.lineEdit_hostname.setObjectName("lineEdit_hostname")
+        self.textEdit = QtWidgets.QTextEdit(self.tab_2)
+        self.textEdit.setGeometry(QtCore.QRect(211, 67, 200, 106))
+        self.textEdit.setObjectName("textEdit")
         self.Main.addTab(self.tab_2, "")
         self.quickWidget = QtQuickWidgets.QQuickWidget(self.centralwidget)
         self.quickWidget.setGeometry(QtCore.QRect(-210, 910, 300, 200))
@@ -312,12 +317,13 @@ class Ui_Window(object):
         _translate = QtCore.QCoreApplication.translate
         Window.setWindowTitle(_translate("Window", "Multi Tools EMIAS"))
         Window.setWindowIcon(QtGui.QIcon('emias.ico'))
-        self.combo_model.setItemText(1, _translate("Window", "HP LaserJet M501"))
-        self.combo_model.setItemText(2, _translate("Window", "HP LaserJet M426"))
-        self.combo_model.setItemText(3, _translate("Window", "HP LaserJet M401"))
+        self.combo_model.setItemText(1, _translate("Window", "HP LaserJet M401"))
+        self.combo_model.setItemText(2, _translate("Window", "HP LaserJet M404"))
+        self.combo_model.setItemText(3, _translate("Window", "HP LaserJet M501"))
         self.combo_model.setItemText(4, _translate("Window", "HP LaserJet M425"))
-        self.combo_model.setItemText(5, _translate("Window", "Pantum BP5100"))
-        self.combo_model.setItemText(6, _translate("Window", "Pantum BM5100"))
+        self.combo_model.setItemText(5, _translate("Window", "HP LaserJet M426"))
+        self.combo_model.setItemText(6, _translate("Window", "Pantum BP5100"))
+        self.combo_model.setItemText(7, _translate("Window", "Pantum BM5100"))
         self.lbl_ip.setText(_translate("Window", "IP адрес:"))
         self.lbl_model.setText(_translate("Window", "Модель:"))
         self.btn_copy.setToolTip(_translate("Window", "Копировать в буфер"))
@@ -332,7 +338,7 @@ class Ui_Window(object):
         self.btn_default.setToolTip(_translate("Window", "Сделать принтер по умолчнию"))
         self.btn_rename.setToolTip(_translate("Window", "Периеименовать hostname АРМ"))
         self.btn_password.setToolTip(_translate("Window", "Пароль (o123456O)"))
-        self.btn_ftp.setToolTip(_translate("Window", "Скопировать драйвер Pantum"))
+        self.btn_ftp.setToolTip(_translate("Window", "Драйверы"))
         self.Main.setTabText(self.Main.indexOf(self.tab), _translate("Window", "Печать"))
         self.label_scan_hp.setText(_translate("Window", "<html><head/><body><p><span style=\" font-weight:600;\">Сканирование</span></p></body></html>"))
         self.btn_copy_hostname.setToolTip(_translate("Window", "Копировать в буфер"))
@@ -352,6 +358,7 @@ class Ui_Window(object):
             "HP-LaserJet-M425": "/opt/Printer_Drivers/Ochered/4-ya ochered/HP-LaserJet-400-MFP-M425.ppd",
             "HP-LaserJet-M426": "/opt/Printer_Drivers/Ochered/4-ya ochered/HP-LaserJet-400-MFP-M425.ppd",
             "HP-LaserJet-M401": "/opt/Printer_Drivers/Ochered/4-ya ochered/HP-LaserJet-400-M401.ppd",
+            "HP-LaserJet-M404": "/opt/Printer_Drivers/Ochered/4-ya ochered/HP-LaserJet-400-M401.ppd",
             "HP-LaserJet-M501": "/opt/Printer_Drivers/Ochered/4-ya ochered/HP-LaserJet-400-M401.ppd",
             "BP5100": "/home/admin/PANTUM_5100.ppd",
             "BM5100": "/home/admin/PANTUM_5100.ppd"
@@ -438,8 +445,10 @@ class Ui_Window(object):
 
     def clear_all_scan(self):
         self.lineEdit_login.clear()
+        self.textEdit.clear()
         self.clear_ip_hp()
         self.clear_hostname_hp()
+
 
 if __name__ == '__main__':
     import sys
