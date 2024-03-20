@@ -92,7 +92,7 @@ class Ui_Window(object):
 
         # Кнопка "Очистить очередь печати"
         self.btn_claer_spooler = QtWidgets.QPushButton(self.tab)
-        self.btn_claer_spooler.setGeometry(QtCore.QRect(24, 100, 38, 40))
+        self.btn_claer_spooler.setGeometry(QtCore.QRect(44, 100, 38, 40))
         self.btn_claer_spooler.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_claer_spooler.setText("")
         icon2 = QtGui.QIcon()
@@ -105,7 +105,7 @@ class Ui_Window(object):
         # Кнопка "Печать тестовой страницы"
         self.btn_test_page = QtWidgets.QPushButton(self.tab)
         self.btn_test_page.setEnabled(True)
-        self.btn_test_page.setGeometry(QtCore.QRect(67, 100, 37, 40))
+        self.btn_test_page.setGeometry(QtCore.QRect(87, 100, 37, 40))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -122,7 +122,7 @@ class Ui_Window(object):
 
         # Кнопка "Удаления принтера"
         self.btn_del_printer = QtWidgets.QPushButton(self.tab)
-        self.btn_del_printer.setGeometry(QtCore.QRect(109, 100, 38, 40))
+        self.btn_del_printer.setGeometry(QtCore.QRect(129, 100, 38, 40))
         self.btn_del_printer.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_del_printer.setAccessibleName("")
         self.btn_del_printer.setAccessibleDescription("")
@@ -136,7 +136,7 @@ class Ui_Window(object):
 
         # Кнопка "Перезагрузка АРМ"
         self.btn_reboot = QtWidgets.QPushButton(self.tab)
-        self.btn_reboot.setGeometry(QtCore.QRect(152, 100, 38, 40))
+        self.btn_reboot.setGeometry(QtCore.QRect(172, 100, 38, 40))
         self.btn_reboot.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_reboot.setAccessibleName("")
         self.btn_reboot.setAccessibleDescription("")
@@ -150,7 +150,7 @@ class Ui_Window(object):
 
         # Кнопка "Перезагрузки CUPS"
         self.btn_cups = QtWidgets.QPushButton(self.tab)
-        self.btn_cups.setGeometry(QtCore.QRect(195, 100, 38, 40))
+        self.btn_cups.setGeometry(QtCore.QRect(215, 100, 38, 40))
         self.btn_cups.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_cups.setAccessibleName("")
         self.btn_cups.setAccessibleDescription("")
@@ -164,7 +164,7 @@ class Ui_Window(object):
 
         # Кнопка "Сделать принтер по умолчанию"
         self.btn_default = QtWidgets.QPushButton(self.tab)
-        self.btn_default.setGeometry(QtCore.QRect(238, 100, 38, 40))
+        self.btn_default.setGeometry(QtCore.QRect(258, 100, 38, 40))
         self.btn_default.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_default.setAccessibleName("")
         self.btn_default.setAccessibleDescription("")
@@ -178,7 +178,7 @@ class Ui_Window(object):
 
         # Кнопка "Переименовать АРМ"
         self.btn_rename = QtWidgets.QPushButton(self.tab)
-        self.btn_rename.setGeometry(QtCore.QRect(281, 100, 37, 40))
+        self.btn_rename.setGeometry(QtCore.QRect(300, 100, 37, 40))
         self.btn_rename.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_rename.setAccessibleName("")
         self.btn_rename.setAccessibleDescription("")
@@ -190,23 +190,9 @@ class Ui_Window(object):
         self.btn_rename.setObjectName("btn_rename")
         self.btn_rename.clicked.connect(self.send_to_clipboard_rename)
 
-        # Кнопка "FTP"
-        self.btn_ftp = QtWidgets.QPushButton(self.tab)
-        self.btn_ftp.setGeometry(QtCore.QRect(323, 100, 37, 40))
-        self.btn_ftp.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.btn_ftp.setAccessibleName("")
-        self.btn_ftp.setAccessibleDescription("")
-        self.btn_ftp.setText("")
-        icon10 = QtGui.QIcon()
-        icon10.addPixmap(QtGui.QPixmap("icons/icon_ftp.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btn_ftp.setIcon(icon10)
-        self.btn_ftp.setIconSize(QtCore.QSize(28, 28))
-        self.btn_ftp.setObjectName("btn_ftp")
-        self.btn_ftp.clicked.connect(self.send_to_clipboard_ftp)
-
         # Кнопка "Пароль"
         self.btn_password = QtWidgets.QPushButton(self.tab)
-        self.btn_password.setGeometry(QtCore.QRect(365, 100, 37, 40))
+        self.btn_password.setGeometry(QtCore.QRect(342, 100, 37, 40))
         self.btn_password.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_password.setAccessibleName("")
         self.btn_password.setAccessibleDescription("")
@@ -338,7 +324,6 @@ class Ui_Window(object):
         self.btn_default.setToolTip(_translate("Window", "Сделать принтер по умолчнию"))
         self.btn_rename.setToolTip(_translate("Window", "Периеименовать hostname АРМ"))
         self.btn_password.setToolTip(_translate("Window", "Пароль (o123456O)"))
-        self.btn_ftp.setToolTip(_translate("Window", "Драйверы"))
         self.Main.setTabText(self.Main.indexOf(self.tab), _translate("Window", "Печать"))
         self.label_scan_hp.setText(_translate("Window", "<html><head/><body><p><span style=\" font-weight:600;\">Сканирование</span></p></body></html>"))
         self.btn_copy_hostname.setToolTip(_translate("Window", "Копировать в буфер"))
@@ -368,6 +353,7 @@ class Ui_Window(object):
             cnt = '-' + self.lineEdit_cnt.text()
         models = self.combo_model.currentText().replace(' ', '-').replace('Pantum-', '')
         model = models
+        ftp = "wget -nc /home/admin ftp://printer:z123456Z@srv-ftp02/13_ochered/PPD/PANTUM_5100.ppd"
         models += cnt
         if models:
             install = f"/usr/sbin/lpadmin -p '{models}' -v 'socket://{ip}:9100' -P '{drivers[model]}'"
@@ -386,6 +372,8 @@ class Ui_Window(object):
                 test_page,
                 status
             ]
+            if '5100' in model:
+                commands.insert(0, ftp)
             command = ";".join(commands)
             QApplication.clipboard().setText(command)
 
@@ -419,10 +407,6 @@ class Ui_Window(object):
 
     def send_to_clipboard_password(self):
         command = "o123456O"
-        QApplication.clipboard().setText(command)
-
-    def send_to_clipboard_ftp(self):
-        command = "mc ftp://printer:z123456Z@srv-ftp02/13_ochered/PPD"
         QApplication.clipboard().setText(command)
 
     def send_to_clipboard_hostname(self):
