@@ -204,7 +204,7 @@ class Ui_Window(object):
         font = QtGui.QFont()
         font.setPointSize(14)
         self.label_scan_hp.setFont(font)
-        self.label_scan_hp.setObjectName("label_scan_hp")
+        self.label_scan_hp.setObjectName("lbl_scan_hp")
         self.line_scan_hp = QtWidgets.QFrame(self.tab_2)
         self.line_scan_hp.setGeometry(QtCore.QRect(10, 30, 403, 21))
         self.line_scan_hp.setFrameShape(QtWidgets.QFrame.HLine)
