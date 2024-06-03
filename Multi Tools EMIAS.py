@@ -458,6 +458,7 @@ class Ui_Window(object):
         QApplication.clipboard().setText(command)
 
     def clear_all_scan(self):
+        """Команда для очистки всех полей на вкладке 'Сканирование'."""
         self.lineEdit_login.clear()
         self.textEdit.clear()
         self.lineEdit_ip_arm.clear()
