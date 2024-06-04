@@ -346,7 +346,7 @@ class Ui_Window(object):
     def retranslateUi(self, Window):
         self._translate = QtCore.QCoreApplication.translate
         Window.setWindowTitle(self._translate("Window", "Multi Tools EMIAS"))
-        Window.setWindowIcon(QtGui.QIcon('emias.ico'))
+        Window.setWindowIcon(QtGui.QIcon(fr'logo.ico'))
         self.combobox_menu()
         self.title_tip()
         self.Main.setTabText(
