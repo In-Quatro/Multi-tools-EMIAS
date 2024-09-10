@@ -38,7 +38,7 @@ auto-py-to-exe
 Запустится приложение, в котором можно выбрать интересующие настройки.
 Для получения готового приложения используйте готовую команду в терминале
 ```
-pyinstaller --noconfirm --onedir --windowed --icon "./logo.ico" --add-data "./icons;icons/" --add-data "./logo.ico;."  "./Multi Tools EMIAS.py"
+pyinstaller --noconfirm --onefile --windowed --icon "./ui/icons/logo.ico" --add-data "./ui;ui/"  "./Multi tools EMIAS.py"
 ```
 Готовое приложение после компеляции будет находиться в корне проекта в папке `dist`.
 
