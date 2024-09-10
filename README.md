@@ -43,7 +43,7 @@ pyinstaller --noconfirm --onefile --windowed --icon "./ui/icons/logo.ico" --add-
 Готовое приложение после компеляции будет находиться в корне проекта в папке `dist`.
 
 ### Технологии
- - Python 3.10
+ - Python 3.9
  - PyQt 5
  
 ### Автор
