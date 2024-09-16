@@ -11,7 +11,7 @@
  - перезагрузка / сброс настроек принтера
  - настройка пути сканирования по SMB
 
-![image](https://github.com/In-Quatro/Multi-tools-EMIAS/assets/107935543/fbf50805-c3bb-499c-b81c-426c9c1e4895)
+![image](https://github.com/user-attachments/assets/f5f672de-b1fc-4035-ab9c-cb7067b9c649)
 ![image](https://github.com/In-Quatro/Multi-tools-EMIAS/assets/107935543/26c70082-fc26-4f08-b372-8e97c916e521)
 
 
