@@ -15,7 +15,8 @@ class MainWindow(QMainWindow):
         self.btn_test_page.clicked.connect(self.send_clipboard_test_page)
         self.btn_del_printer.clicked.connect(self.send_clipboard_del_printer)
         self.btn_reboot.clicked.connect(self.send_clipboard_reboot)
-        self.btn_cups.clicked.connect(self.send_clipboard_cups)
+        self.btn_reboot_prn.clicked.connect(self.send_clipboard_reboot_printer)
+        self.btn_reset_prn.clicked.connect(self.send_clipboard_reset_printer)
         self.btn_default.clicked.connect(self.send_clipboard_default)
         self.btn_rename.clicked.connect(self.send_clipboard_rename)
         self.btn_password.clicked.connect(self.send_clipboard_password)
@@ -39,35 +40,33 @@ class MainWindow(QMainWindow):
         return os.path.join(base_path, relative_path)
     def send_clipboard_printer(self):
         """Команда для установки принтера."""
-
         ip = self.le_ip.text().replace(" ", "")
         folder_1 = "/opt/Printer_Drivers/Ochered/4-ya ochered/"
         folder_2 = "/home/admin/"
         drivers = {
-            "HP LaserJet M425": f"{folder_1}HP-LaserJet-400-MFP-M425.ppd",
-            "HP LaserJet M426": f"{folder_1}HP-LaserJet-400-MFP-M425.ppd",
-            "HP LaserJet M401": f"{folder_1}HP-LaserJet-400-M401.ppd",
-            "HP LaserJet M404": f"{folder_1}HP-LaserJet-400-M401.ppd",
-            "HP LaserJet M501": f"{folder_1}HP-LaserJet-400-M401.ppd",
+            "HP-LaserJet-M425": f"{folder_1}HP-LaserJet-400-MFP-M425.ppd",
+            "HP-LaserJet-M426": f"{folder_1}HP-LaserJet-400-MFP-M425.ppd",
+            "HP-LaserJet-M401": f"{folder_1}HP-LaserJet-400-M401.ppd",
+            "HP-LaserJet-M404": f"{folder_1}HP-LaserJet-400-M401.ppd",
+            "HP-LaserJet-M501": f"{folder_1}HP-LaserJet-400-M401.ppd",
             "BP5100": f"{folder_2}PANTUM_5100.ppd",
             "BM5100": f"{folder_2}PANTUM_5100.ppd"
         }
         cnt = ""
         if self.le_cnt.text() != '':
             cnt = '-' + self.le_cnt.text()
-        model = self.cb_model.currentText().replace('Pantum ', '')
+        model = self.cb_model.currentText().replace(' ', '-').replace('Pantum-', '')
         ftp = ("wget -nc /home/admin "
                "ftp://printer:z123456Z"
                "@srv-ftp02/13_ochered/PPD/PANTUM_5100.ppd")
-        model_cnt = model + cnt if cnt else model
         if model:
             install = (f"/usr/sbin/lpadmin -p "
-                       f"'{model_cnt}' -v "
+                       f"'{model + cnt if cnt else model}' -v "
                        f"'socket://{ip}:9100' -P '{drivers[model]}'")
-            enable = f"/usr/sbin/cupsenable {model_cnt}"
-            accept = f"/usr/sbin/cupsaccept {model_cnt}"
-            default = f"/usr/sbin/lpadmin -d {model_cnt}"
-            options = f"lpoptions -d {model_cnt}"
+            enable = f"/usr/sbin/cupsenable {model}{cnt}"
+            accept = f"/usr/sbin/cupsaccept {model}{cnt}"
+            default = f"/usr/sbin/lpadmin -d {model}{cnt}"
+            options = f"lpoptions -d {model}{cnt}"
             test_page = "lpr /usr/share/cups/data/default-testpage.pdf"
             status = "lpstat -t"
             commands = [
@@ -106,9 +105,20 @@ class MainWindow(QMainWindow):
         command = "systemctl reboot -i"
         QApplication.clipboard().setText(command)
 
-    def send_clipboard_cups(self):
-        """Команда для перезагрузки службы CUPS."""
-        command = "systemctl restart cups"
+    def send_clipboard_reboot_printer(self):
+        """Команда для перезагрузки принтера."""
+        ip = self.le_ip.text().replace(" ", "")
+        oid = '1.3.6.1.2.1.43.5.1.1.3.1'
+        value = 4
+        command = f"snmpset -v1 -c public {ip} {oid} i {value}"
+        QApplication.clipboard().setText(command)
+
+    def send_clipboard_reset_printer(self):
+        """Команда для сброса настроек принтера."""
+        ip = self.le_ip.text().replace(" ", "")
+        oid = '1.3.6.1.2.1.43.5.1.1.3.1'
+        value = 6
+        command = f"snmpset -v1 -c public {ip} {oid} i {value}"
         QApplication.clipboard().setText(command)
 
     def send_clipboard_default(self):

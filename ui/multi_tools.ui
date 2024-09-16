@@ -264,10 +264,10 @@
      <widget class="QSplitter" name="splitter">
       <property name="geometry">
        <rect>
-        <x>41</x>
-        <y>100</y>
-        <width>341</width>
-        <height>43</height>
+        <x>2</x>
+        <y>110</y>
+        <width>418</width>
+        <height>48</height>
        </rect>
       </property>
       <property name="orientation">
@@ -319,8 +319,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>35</width>
+         <height>35</height>
         </size>
        </property>
       </widget>
@@ -342,66 +342,12 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>icons/icon_delete_printer.png</normaloff>icons/icon_delete_printer.png</iconset>
+         <normaloff>icons/icone_delete_printer.png</normaloff>icons/icone_delete_printer.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btn_reboot">
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="toolTip">
-        <string>Перезагрузка АРМ</string>
-       </property>
-       <property name="accessibleName">
-        <string/>
-       </property>
-       <property name="accessibleDescription">
-        <string/>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>icons/icon_reboot.png</normaloff>icons/icon_reboot.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
-        </size>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btn_cups">
-       <property name="cursor">
-        <cursorShape>PointingHandCursor</cursorShape>
-       </property>
-       <property name="toolTip">
-        <string>Перезагрузить службы CUPS</string>
-       </property>
-       <property name="accessibleName">
-        <string/>
-       </property>
-       <property name="accessibleDescription">
-        <string/>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>icons/icon_cups.png</normaloff>icons/icon_cups.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>32</width>
-         <height>32</height>
+         <width>40</width>
+         <height>40</height>
         </size>
        </property>
       </widget>
@@ -427,8 +373,35 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>35</width>
+         <height>35</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_reboot">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="toolTip">
+        <string>Перезагрузка АРМ</string>
+       </property>
+       <property name="accessibleName">
+        <string/>
+       </property>
+       <property name="accessibleDescription">
+        <string/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>icons/icon_reboot_arm.png</normaloff>icons/icon_reboot_arm.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
         </size>
        </property>
       </widget>
@@ -454,8 +427,65 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>25</width>
-         <height>25</height>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_reboot_prn">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="toolTip">
+        <string>Перезагрузить принтер</string>
+       </property>
+       <property name="accessibleName">
+        <string/>
+       </property>
+       <property name="accessibleDescription">
+        <string/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>icons/icon_reboot_printer.png</normaloff>icons/icon_reboot_printer.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>35</width>
+         <height>35</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_reset_prn">
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="acceptDrops">
+        <bool>false</bool>
+       </property>
+       <property name="toolTip">
+        <string>Сбросить настройки принтеру</string>
+       </property>
+       <property name="accessibleName">
+        <string/>
+       </property>
+       <property name="accessibleDescription">
+        <string/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>icons/icon_reset_settings.png</normaloff>icons/icon_reset_settings.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>35</width>
+         <height>35</height>
         </size>
        </property>
       </widget>
@@ -481,8 +511,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>25</width>
-         <height>25</height>
+         <width>35</width>
+         <height>35</height>
         </size>
        </property>
       </widget>
