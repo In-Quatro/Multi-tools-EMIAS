@@ -25,6 +25,12 @@ class MainWindow(QMainWindow):
         self.btn_clear_all.clicked.connect(self.clear_all_scan)
         self.btn_clear_hostname.clicked.connect(self.le_hostname.clear)
         self.btn_clear_ip_scan.clicked.connect(self.le_ip_arm.clear)
+        self.btn_copy_check_hostname.clicked.connect(
+            lambda:
+            self.send_clipboard_check_smb_folder(self.le_hostname.text()))
+        self.btn_copy_check_ip.clicked.connect(
+            lambda:
+            self.send_clipboard_check_smb_folder(self.le_ip_arm.text()))
 
 
     def resource_path(self, relative_path):
@@ -157,6 +163,14 @@ class MainWindow(QMainWindow):
         self.te_temp.clear()
         self.le_ip_arm.clear()
         self.le_hostname.clear()
+
+    def send_clipboard_check_smb_folder(self, host):
+        login = self.le_login.text()
+        smb = fr'\\{host}.mosgorzdrav.local\scan\{login}'.replace(" ", "")
+        command = fr'net use {smb} /user:scan ol23lrm'
+        QApplication.clipboard().setText(command)
+
+
 
 
 if __name__ == '__main__':
