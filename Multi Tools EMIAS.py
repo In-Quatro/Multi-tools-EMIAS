@@ -2,6 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets, QtQuickWidgets, uic
 from PyQt5.QtWidgets import (QApplication, QMainWindow,
                              QTableWidgetItem, QDialog)
 import sys, os
+from functools import partial
 
 class MainWindow(QMainWindow):
     """"Главное окно."""
@@ -27,7 +28,7 @@ class MainWindow(QMainWindow):
         self.btn_clear_ip_scan.clicked.connect(self.le_ip_arm.clear)
         self.btn_copy_check_hostname.clicked.connect(
             lambda:
-            self.send_clipboard_check_smb_folder(self.le_hostname.text()))
+            self.send_clipboard_check_smb_folder(self.le_hostname.text(), True))
         self.btn_copy_check_ip.clicked.connect(
             lambda:
             self.send_clipboard_check_smb_folder(self.le_ip_arm.text()))
@@ -164,9 +165,10 @@ class MainWindow(QMainWindow):
         self.le_ip_arm.clear()
         self.le_hostname.clear()
 
-    def send_clipboard_check_smb_folder(self, host):
+    def send_clipboard_check_smb_folder(self, host, flag=False):
         login = self.le_login.text()
-        smb = fr'\\{host}.mosgorzdrav.local\scan\{login}'.replace(" ", "")
+        host = host if not flag else fr'{host}.mosgorzdrav.local'
+        smb = fr'\\{host}\scan\{login}'.replace(" ", "")
         command = fr'net use {smb} /user:scan ol23lrm'
         QApplication.clipboard().setText(command)
 
